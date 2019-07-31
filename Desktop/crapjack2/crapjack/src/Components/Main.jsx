@@ -2,6 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import Nav from "./Nav";
 import Button from "./Button";  
+import Title from "./Title";
+import Subtitle from "./Subtitle";
 
 const MainContainer = styled.div`
   display: flex;
@@ -14,6 +16,9 @@ const Main = () => {
   return (
     <MainContainer>
       <Nav>
+        <Title>The Concentration Game</Title>
+        <Subtitle>matchCount</Subtitle>
+        <Subtitle>failCount</Subtitle>
         <Button >New Game</Button>
       </Nav>
     </MainContainer>
