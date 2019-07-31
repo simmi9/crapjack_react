@@ -5,9 +5,346 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color:white;
+  min-height: 100%;
+  font: 16px / 1 sans-serif;
+  background-color: darkgreen   
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+    monospace;  
+}
+  
+
+.backdrop {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: fixed;
+    background: rgba(200,200,200,0.2);  
+}
+
+.backdrop p {
+  text-align: center;
+  margin: 100px 0;
+  padding: 100px 0;
+  font-size: 5em; 
+  font-weight: bolder;
+  background-color: rgba(0,24,0,0.75);
+  border-style: solid;
+  cursor: pointer;
+}
+
+.cardTable {
+  padding: 15px;
+}
+
+.hide {
+  display: none;
+}
+
+button.btn {
+  width: 100px;
+  height: 100px;
+  border-color: darkgreen;
+  border-radius: 10px;
+  background: green;
+  color: white;
+  font-size: 20px;
+}
+
+button.btn:hover {
+  background: lightgreen;
+  color: darkgrey;
+}
+
+.mid {  
+  text-align:center;
+  padding: 10px 0;
+}
+
+.gutter {
+  height: 200px;
+  background-color: darkgreen;
+}
+
+button.bet {
+  width: 100px;
+  height: 100px;
+  background: lightgray;
+  color: black;
+  font-size: 20px;
+  font-weight: bolder;
+  border-radius: 50px;
+  border: 8px dashed black;
+  margin: 4px;
+}
+
+button.bet:hover {
+  border-color:gray;
+  color:gray;
+}
+
+button.bet5 {
+  width: 100px;
+  height: 100px;
+  color: black;
+  font-size: 20px;
+  font-weight: bolder;
+  border-radius: 50px;
+  border: 8px dashed black;
+  margin: 4px;
+  background-color: darkblue;
+}
+
+button.bet10 {
+  width: 100px;
+  height: 100px;
+  color: black;
+  font-size: 20px;
+  font-weight: bolder;
+  border-radius: 50px;
+  border: 8px dashed black;
+  margin: 4px;
+  background-color: red;
+}
+
+button.betDisabled {
+  width: 100px;
+  height: 100px;
+  background: lightgray;
+  color: black;
+  font-size: 20px;
+  font-weight: bolder;
+  border-radius: 50px;
+  border: 8px dashed gray;
+  margin: 4px;
+  color:gray;
+}
+
+.space {
+  width: 100px;
+}
+
+.numDisplay 
+{
+  background: #000;
+  padding: 10px 60px;
+  border-radius: 25px;
+  opacity: 0.65;
+}
+
+.totalDisplay {
+  background: #000;
+  padding: 20px 280px;
+  border-radius: 25px;
+  opacity: 0.75;
+}
+
+h1 {
+  font-family: 'Ultra', serif;
+  font-weight: normal;
+  color: white;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.6);
+  margin: 0;
+  padding-top: 3.5rem;
+  padding-bottom: 3.5rem;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  font-size: 4.5rem;
+  text-align: center;
+  background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.75)),
+    url('https://picjumbo.com/wp-content/uploads/playing-cards_free_stock_photos_picjumbo_DSC07167-2210x1473.jpg');
+  border-bottom: 4px solid rgb(230, 242, 233);
+}
+
+.play-area {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.game-results {
+  display: flex;
+  font-family: 'Ultra', serif;
+  color: white;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.6);
+  margin: 2.5rem 2rem;
+  font-size: 2rem;
+  line-height: 2rem;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 0.75rem;
+  padding-right: 0.6;
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 0.75rem;
+  padding-left: 0.6;
+}
+
+.hit,    
+.stay {
+  display:flex;  
+  justify-items: center;
+  justify-content: center;
+  font-family: 'Ultra', serif;
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 1.6rem;
+  width: 10rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  border-radius: 7px;
+  border: 3px solid rgba(0, 0, 0, 0.3);
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
+  background-color: white; 
+}
+
+.hit:hover,
+.stay:hover {
+  color: rgba(0, 0, 0, 0.75);
+  background-color: rgb(249, 114, 114);
+  cursor: pointer;
+}
+
+p {
+  font-family: 'Ultra', serif;
+  color: rgba(0, 0, 0, 0.75);
+  text-align: center;
+}
+
+.player-total,
+.dealer-total {
+  font-size: 1.4rem;
+  margin-top: 0;
+}
+
+.player-hand {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.player-hand img {
+  height: 10rem;
+  margin: 0.6rem;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
+  border-radius: 4px;
+}
+
+.dealer-hand {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.dealer-hand img {
+  width: 6rem;
+  height: 139px;
+  margin: 0.6rem;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
+  border-radius: 4px;
+}
+
+.hidden {
+  display: none;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+}
+
+.reset {
+  font-family: 'Ultra', serif;
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 1.6rem;
+  width: 15rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-radius: 7px;
+  border: 3px solid rgba(0, 0, 0, 0.3);
+  background-color: white;
+  margin-bottom: 1rem;
+}
+
+.reset:hover {
+  color: rgba(0, 0, 0, 0.75);
+  background-color: rgb(249, 114, 114);
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 560px) {
+  h1 {
+    font-size: 4rem;
+  }
+}
+
+@media only screen and (max-width: 460px) {
+  h1 {
+    font-size: 3.5rem;
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  h1 {
+    font-size: 3rem;
+  }
+
+  .game-results {
+    font-size: 1.6rem;
+  }
+
+  .hit,
+  .stay {
+    width: 7rem;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  h1 {
+    font-size: 2.6rem;
+  }
+
+  .left {
+    margin-left: 0.5rem;
+  }
+
+  .right {
+    margin-right: 0.5rem;
+  }
+}
+
+@media only screen and (min-width: 780px) {
+  .dealer-hand img,
+  .player-hand img,
+  .cardback-one,
+  .cardback-two {
+    width: 128px;
+    height: 186px;
+  }
+}
+
+@media only screen and (min-width: 1080px) {
+  h1 {
+    font-size: 5.5rem;
+  }
+
+  .game-results {
+    font-size: 2.5rem;
+  }
+
+  .play-area {
+    margin-top: 2rem;
+  }
 }
